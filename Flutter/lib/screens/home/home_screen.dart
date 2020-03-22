@@ -25,9 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() => tabIndex = index);
         },
         items: [
-          buildNavBarItem(Icons.home, 'Home'),
+          buildNavBarItem(Icons.home, 'Global Top 50'),
           buildNavBarItem(Icons.beach_access, 'Busca'),
-          buildNavBarItem(Icons.favorite, 'Favoritos'),
+          buildNavBarItem(Icons.search, 'Favoritos'),
         ],
       ),
     );
