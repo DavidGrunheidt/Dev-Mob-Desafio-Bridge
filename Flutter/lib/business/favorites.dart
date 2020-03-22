@@ -54,6 +54,12 @@ class Favorites extends ChangeNotifier {
     return _added.isEmpty && _removed.isEmpty;
   }
 
+  void _sortByName() {
+    if (!(_favorites == null || favorites.isEmpty)) {
+      _favorites.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
+    }
+  }
+
   void _load([List<Track> tracks]) async {
     if (tracks == null) {
       if (_favorites == null) {
@@ -66,6 +72,8 @@ class Favorites extends ChangeNotifier {
     } else {
       _favorites = tracks;
     }
+
+    _sortByName();
 
     _added.removeWhere((t) => _favorites.contains(t));
     _removed.removeWhere((t) => !_favorites.contains(t));

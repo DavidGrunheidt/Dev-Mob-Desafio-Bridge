@@ -1,6 +1,7 @@
 import 'package:audino/business/favorites.dart';
 import 'package:audino/screens/home/tab_title.dart';
 import 'package:audino/widgets/track_item.dart';
+import 'package:audino/models.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ class _FavoritesTabState extends State<FavoritesTab> {
   @override
   Widget build(BuildContext context) {
     final favorites = Provider.of<Favorites>(context);
+    var favoritesList = favorites.favorites;
 
     return ListView(
       children: <Widget>[
@@ -21,7 +23,7 @@ class _FavoritesTabState extends State<FavoritesTab> {
           Center(
             child: CircularProgressIndicator(),
           )
-        else if (favorites.favorites.isEmpty)
+        else if (favoritesList.isEmpty)
           Center(
             child: Column(
               children: <Widget>[
@@ -38,8 +40,8 @@ class _FavoritesTabState extends State<FavoritesTab> {
             ),
           )
         else
-          for (final track in favorites.favorites)
-            TrackItem(track: track, tracks: favorites.favorites),
+          for (final track in favoritesList)
+            TrackItem(track: track, tracks: favoritesList),
       ],
     );
   }
