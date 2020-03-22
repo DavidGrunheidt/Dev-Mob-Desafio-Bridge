@@ -14,7 +14,7 @@ class _FavoritesTabState extends State<FavoritesTab> {
   @override
   Widget build(BuildContext context) {
     final favorites = Provider.of<Favorites>(context);
-    var favoritesList = favorites.favorites;
+    List<Track> favoritesList = favorites.favorites;
 
     return ListView(
       children: <Widget>[
