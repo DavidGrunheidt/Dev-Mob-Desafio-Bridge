@@ -26,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: [
           buildNavBarItem(Icons.home, 'Global Top 50'),
-          buildNavBarItem(Icons.beach_access, 'Busca'),
-          buildNavBarItem(Icons.search, 'Favoritos'),
+          buildNavBarItem(Icons.search, 'Busca'),
+          buildNavBarItem(Icons.favorite, 'Favoritos'),
         ],
       ),
     );
