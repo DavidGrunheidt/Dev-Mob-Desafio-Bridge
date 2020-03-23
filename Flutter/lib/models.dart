@@ -67,6 +67,7 @@ class FullArtist extends Artist {
   final String image;
   final List<FullAlbum> albums;
   final List<Track> topTracks;
+  final int followers;
 
   FullArtist({
     String id,
@@ -74,6 +75,7 @@ class FullArtist extends Artist {
     this.image,
     this.albums,
     this.topTracks,
+    this.followers,
   }) : super(id: id, name: name);
 
   factory FullArtist.fromJson(Map<String, dynamic> data) {
@@ -87,6 +89,7 @@ class FullArtist extends Artist {
       topTracks: (data['top_tracks'] as List)
           .map((d) => Track.fromJson(d as Map<String, dynamic>))
           .toList(),
+      followers: data['followers'] as int,
     );
   }
 }

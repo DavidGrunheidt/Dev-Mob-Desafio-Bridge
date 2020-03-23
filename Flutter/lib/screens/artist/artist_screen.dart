@@ -47,6 +47,20 @@ class _ArtistScreenState extends State<ArtistScreen> {
     );
   }
 
+  String _buildArtistFollowersString() {
+    Map<int, String> followers = artist.followers.toString().split('').asMap();
+    int followersStringLength = followers.length;
+    List<String> followersStringConstructor = [];
+    followers.forEach((index, number) {
+      if (((followersStringLength - (index + 1)) % 3 == 0) && (index + 1 != followersStringLength)) {
+        followersStringConstructor.add('$number ');
+      } else {
+        followersStringConstructor.add(number);
+      }
+    });
+    return followersStringConstructor.join('');
+  }
+
   Widget buildBody() {
     if (loading) {
       return Center(child: CircularProgressIndicator());
@@ -75,13 +89,14 @@ class _ArtistScreenState extends State<ArtistScreen> {
                           ),
                         ),
                         Text(
-                          '1.000 seguidores',
+                          '${_buildArtistFollowersString()} seguidores',
                           softWrap: false,
                           overflow: TextOverflow.fade,
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             color: const Color(0xFF7B7B7B),
+                            fontFamily: 'Inter-Medium',
                           ),
                         ),
                       ],
