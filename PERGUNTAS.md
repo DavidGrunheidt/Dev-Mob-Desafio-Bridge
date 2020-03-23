@@ -26,9 +26,11 @@ A razão que escolhi fazer em load é que, load é chamado tanto na inicializaç
 
 Sobre T5:
 
-A tarefa também foi tranquila. Só não entendi muito bem qual o tamanho da fonte, porque no arquivo de estilos dado pra gente, ao clicar na fonte dizia tamanho: 14pt mas a setinha vertical dizia 16 (e comparando a tela na minha implementação com a imagem, conclui que era 16). Mas essa duvida é mais porque eu nunca trabalhei com essa parte de definição de estilos e etc. De resto, achei bem interessante.
+A tarefa também foi tranquila. Só fiquei com umas duvidas sobre fonte e tamanho, porque nunca mexi com essa parte de definição de estilos pegando as informações de uma ferramenta de design. Mas no final acredito que consegui renderizar o que era esperado.
 
 Sobre T6:
 
+Achei um bug, onde, ao clicar em "ver album" nos top 50, o atributo "artistName" da classe AlbumScreen vinha como o id do artista, pois a classe TrackMenu (na linha 18), estava passando para o construtor da classe AlbumScreen passava track.artists.first.id em vez de track.artists.first.name. Quando vamos para um album através da "Discografia" de um artista a informação artistName é passada correta.
 
+Também não consegui descobrir onde tirar a informação "ano" mostrada nos estilos, (Ex: lá tem, em baixo do nome do album, {Nome artista} {ano}, {nº de musicas}). Analisei os jsons dos endpoins /artists e /albums e nenhum deles tinha essa informação.
 

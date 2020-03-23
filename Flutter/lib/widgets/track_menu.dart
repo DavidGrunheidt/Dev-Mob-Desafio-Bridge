@@ -15,7 +15,8 @@ class TrackMenu extends StatelessWidget {
     return PopupMenuButton(
       onSelected: (id) {
         if (id == _kAlbumSentinel) {
-          Navigator.push(context, Routes.album(albumId: track.album.id, artistName: track.artists.first.id));
+          Navigator.push(context, Routes.album(albumId: track.album.id,
+                  artistName: track.artists.map((artist) => artist.name).join(', ')));
         } else {
           final artist = track.artists.firstWhere((a) => a.id == id);
           Navigator.push(context, Routes.artist(artist: artist));

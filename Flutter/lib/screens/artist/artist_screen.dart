@@ -1,7 +1,6 @@
 import 'package:audino/api/artists.dart';
 import 'package:audino/models.dart';
 import 'package:audino/screens/routes.dart';
-import 'package:audino/utils/strings.dart';
 import 'package:audino/widgets/album_carousel.dart';
 import 'package:audino/widgets/audino_button.dart';
 import 'package:audino/widgets/audino_scaffold.dart';
@@ -93,10 +92,9 @@ class _ArtistScreenState extends State<ArtistScreen> {
                           softWrap: false,
                           overflow: TextOverflow.fade,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: const Color(0xFF7B7B7B),
-                            fontFamily: 'Inter-Medium',
                           ),
                         ),
                       ],
