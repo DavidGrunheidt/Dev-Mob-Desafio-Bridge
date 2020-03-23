@@ -34,3 +34,8 @@ Achei um bug, onde, ao clicar em "ver album" nos top 50, o atributo "artistName"
 
 Também não consegui descobrir onde tirar a informação "ano" mostrada nos estilos, (Ex: lá tem, em baixo do nome do album, {Nome artista} {ano}, {nº de musicas}). Analisei os jsons dos endpoints /artists e /albums e nenhum deles tinha essa informação.
 
+Enviei um email para o Caio e ele disse que podia tratar estes bugs da forma que preferisse, então, os albums, substitui track.artist.first.id por ...first.name (só o nome do primeiro artista, pois quando tem mais de um as vezes parte do restante do texto fica escondido em baixo de "tocar"). Quanto ao ano, não mostrei a informação.
+
+Também vi nos estilos do album que tem um icone "explict", mas nos atributos de ambos artistas e albums não existe nada que possa indicar se devo ou naõ mostrar esse icone, então ignorei ele também.
+
+
